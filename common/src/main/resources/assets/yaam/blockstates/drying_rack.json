@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north":  { "model": "yaam:block/drying_rack", "y":  180 },
+    "facing=south":  { "model": "yaam:block/drying_rack", "y":  0 },
+    "facing=east":   { "model": "yaam:block/drying_rack", "y":  270 },
+    "facing=west":   { "model": "yaam:block/drying_rack", "y":  90 }
+  }
+}

@@ -1,0 +1,37 @@
+{
+	"credit": "Made with Blockbench",
+	"parent": "block/block",
+	"textures": {
+		"particle": "block/oak_planks",
+		"leg": "block/oak_planks"
+	},
+	"elements": [
+		{
+			"from": [0, 14, 0],
+			"to": [16, 16, 2],
+			"faces": {
+				"north": {"uv": [2, 2, 18, 4], "texture": "#leg"},
+				"east": {"uv": [0, 2, 2, 4], "texture": "#leg"},
+				"south": {"uv": [20, 2, 36, 4], "texture": "#leg"},
+				"west": {"uv": [18, 2, 20, 4], "texture": "#leg"},
+				"up": {"uv": [18, 2, 2, 0], "texture": "#leg"},
+				"down": {"uv": [34, 0, 18, 2], "texture": "#leg"}
+			}
+		}
+	],
+	"display": {
+		"gui": {
+			"rotation": [30, 225, 0],
+			"translation": [0, -3, 0],
+			"scale": [0.625, 0.625, 0.625]
+		}
+	},
+	"groups": [
+		{
+			"name": "drying_rack",
+			"origin": [8, 8, 8],
+			"color": 0,
+			"children": [0]
+		}
+	]
+}

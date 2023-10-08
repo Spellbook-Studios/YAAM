@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "id": "yaam",
+  "version": "${version}",
+
+  "name": "Yet Another Additions Mod",
+  "description": "",
+  "authors": ["Sebsa"],
+  "contact": {},
+
+  "license": "BSD 3-Clause (NewBSD) License",
+  "icon": "assets/yaam/yaam.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": ["dk.sebsa.yaam.fabric.YetAnotherAdditionsModFabric"],
+    "client": ["dk.sebsa.yaam.fabric.YAAMClientFabric"]
+  },
+  "depends": {
+    "fabricloader": ">=0.14.23",
+    "minecraft": ">=1.20.1"
+  }
+}
