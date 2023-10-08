@@ -13,7 +13,7 @@ import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 
 public class DryingRackEntityRenderer implements BlockEntityRenderer<DryingRackEntity> {
-    public DryingRackEntityRenderer(BlockEntityRendererProvider.Context ctx) { System.out.println("HJIO"); }
+    public DryingRackEntityRenderer(BlockEntityRendererProvider.Context ctx) { }
 
     @Override
     public void render(DryingRackEntity blockEntity, float f, PoseStack poseStack, MultiBufferSource multiBufferSource, int i, int j) {

@@ -109,4 +109,8 @@ public class DryingRackEntity extends BlockEntity {
 
         super.setChanged();
     }
+
+    public void dropItems() {
+
+    }
 }

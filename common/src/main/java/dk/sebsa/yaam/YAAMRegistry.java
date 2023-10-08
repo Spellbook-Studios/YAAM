@@ -26,7 +26,7 @@ public class YAAMRegistry {
 
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(YetAnotherAdditionsMod.MOD_ID, Registries.BLOCK);
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(YetAnotherAdditionsMod.MOD_ID, Registries.ITEM);
-    public static final RegistrySupplier<Block> DRYING_RACK = BLOCKS.register("drying_rack", () -> new DryingRack(BlockBehaviour.Properties.copy(Blocks.TRIPWIRE_HOOK)));
+    public static final RegistrySupplier<Block> DRYING_RACK = BLOCKS.register("drying_rack", () -> new DryingRack(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)));
 
     public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES = DeferredRegister.create(YetAnotherAdditionsMod.MOD_ID, Registries.BLOCK_ENTITY_TYPE);
     public static final RegistrySupplier<BlockEntityType<DryingRackEntity>> DRYING_RACK_ENTITY =
