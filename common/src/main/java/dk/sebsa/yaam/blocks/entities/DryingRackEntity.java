@@ -41,7 +41,7 @@ public class DryingRackEntity extends BlockEntity {
 
     private void setTimeGoal(Item item) {
         if (item.equals(Items.ROTTEN_FLESH)) {
-            timeGoal = 20 * 10;
+            timeGoal = 20 * 120;
             result = Items.LEATHER;
         } else {
             timeGoal = -1;
