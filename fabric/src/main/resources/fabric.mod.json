@@ -14,7 +14,10 @@
   "environment": "*",
   "entrypoints": {
     "main": ["dk.sebsa.yaam.fabric.YetAnotherAdditionsModFabric"],
-    "client": ["dk.sebsa.yaam.fabric.YAAMClientFabric"]
+    "client": ["dk.sebsa.yaam.fabric.YAAMClientFabric"],
+    "emi": [
+      "dk.sebsa.yaam.fabric.emi.YAAMEMI"
+    ]
   },
   "depends": {
     "fabricloader": ">=0.14.23",

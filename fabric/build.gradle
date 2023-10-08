@@ -24,6 +24,10 @@ dependencies {
 
     common(project(path: ":common", configuration: "namedElements")) { transitive false }
     shadowCommon(project(path: ":common", configuration: "transformProductionFabric")) { transitive false }
+
+    // EMI
+    modCompileOnly "dev.emi:emi-fabric:${rootProject.emi_version}:api"
+    modLocalRuntime "dev.emi:emi-fabric:${rootProject.emi_version}"
 }
 
 processResources {
