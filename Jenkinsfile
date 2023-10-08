@@ -1,3 +1,5 @@
+def changes
+
 pipeline {
     agent any
 
@@ -15,7 +17,7 @@ pipeline {
         stage('Gen Changelist') {
             steps {
                 script {
-                    changes = "Changes:<n>"
+                    changes = "Changes:"
                     build = currentBuild
 
                     while(build != null && build.result != 'SUCCESS') {
