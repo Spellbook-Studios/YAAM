@@ -8,11 +8,11 @@ pipeline {
     }
 
     stages {
-        stage('Checkout') {
-            steps {
-                scmSkip(deleteBuild: true, skipPattern:'.*\\[no ci\\].*')
-            }
-        }
+        //stage('Checkout') {
+        //    steps {
+        //        scmSkip(deleteBuild: true, skipPattern:'.*\\[no ci\\].*')
+        //    }
+        //}
 
         stage('Gen Changelist') {
             steps {
