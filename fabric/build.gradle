@@ -41,13 +41,13 @@ processResources {
 shadowJar {
     configurations = [project.configurations.shadowCommon]
     archiveClassifier.set("dev-shadow")
-    archiveFileName = "${baseName}-${version}-fabric.${extension}"
 }
 
 remapJar {
     inputFile.set shadowJar.archiveFile
     dependsOn shadowJar
     archiveClassifier.set(null)
+    archiveFileName = "${baseName}-${version}-fabric.${extension}"
 }
 
 jar {
@@ -86,7 +86,7 @@ modrinth {
     versionNumber = project.mod_version // You don't need to set this manually. Will fail if Modrinth has this version already
     versionType = "release" // This is the default -- can also be `beta` or `alpha`
     versionName = "${project.mod_version} [FABRIC]"
-    uploadFile = shadowJar // With Loom, this MUST be set to `remapJar` instead of `jar`!
+    uploadFile = remapJar // With Loom, this MUST be set to `remapJar` instead of `jar`!
     gameVersions = [project.minecraft_version] // Must be an array, even with only one version
     changelog = project.hasProperty('changeLog') ?
             project.getProperty('changeLog').replace("<n>","\n") : null
@@ -94,5 +94,6 @@ modrinth {
     syncBodyFrom = project.file("../README.md").text
     dependencies {
         required.project "architectury-api" // Creates a new required dependency on Fabric API
+        optional.project("emi")
     }
 }
