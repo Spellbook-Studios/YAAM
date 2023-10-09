@@ -36,9 +36,12 @@ pipeline {
         stage('Build') {
             steps {
                 withGradle {
-                    sh "./gradlew clean :forge:modrinth :fabric:modrinth -PchangeLog=\"${changes}\""
+                    sh "./gradlew clean :forge:modrinth -PchangeLog=\"${changes}\""
                 }
                 archiveArtifacts artifacts: "forge/build/libs/*.jar", fingerprint: true, followSymlinks: false, onlyIfSuccessful: true
+                withGradle {
+                    sh "./gradlew :fabric:modrinth -PchangeLog=\"${changes}\""
+                }
                 archiveArtifacts artifacts: "fabric/build/libs/*.jar", fingerprint: true, followSymlinks: false, onlyIfSuccessful: true
             }
         }
