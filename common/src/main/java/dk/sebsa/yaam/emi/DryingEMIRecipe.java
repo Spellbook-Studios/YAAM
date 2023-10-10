@@ -6,17 +6,27 @@ import dev.emi.emi.api.stack.EmiStack;
 import dev.emi.emi.api.widget.WidgetHolder;
 import dev.emi.emi.api.render.EmiTexture;
 import dk.sebsa.yaam.YetAnotherAdditionsMod;
+import dk.sebsa.yaam.recipe.DryingRecipe;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 
+import java.util.List;
+
 public class DryingEMIRecipe extends BasicEmiRecipe {
-    private final int dryingTime = 20*120;
-    public DryingEMIRecipe(Item from, Item to) {
-        super(YAAMEMI.DRYING_CATEGORY, new ResourceLocation(YetAnotherAdditionsMod.MOD_ID, "drying/" + from.arch$registryName().getPath()), 76, 26);
-        this.inputs.add(EmiIngredient.of(Ingredient.of(from)));
-        this.outputs.add(EmiStack.of(to));
+    private final String dryingTimeS;
+
+    public DryingEMIRecipe(DryingRecipe dryingRecipe) {
+        super(YAAMEMI.DRYING_CATEGORY, dryingRecipe.getId(), 76, 26);
+        this.inputs.add(EmiIngredient.of(dryingRecipe.getInput()));
+        this.outputs.add(EmiStack.of(dryingRecipe.getOutput()));
+
+        int dryingTime = dryingRecipe.getTimeMax();
+        if(dryingTime >= 20*60) dryingTimeS = Math.round((float) dryingTime / (60*20))+"m";
+        else if(dryingTime >= 20) dryingTimeS = Math.round((float) dryingTime /20)+"s";
+        else dryingTimeS = dryingTime +"t";
     }
 
     @Override
@@ -26,11 +36,6 @@ public class DryingEMIRecipe extends BasicEmiRecipe {
 
         // Adds an input slot on the left
         widgets.addSlot(inputs.get(0), 0, 0);
-
-        String dryingTimeS;
-        if(dryingTime >= 20*60) dryingTimeS = Math.round((float) dryingTime / (60*20))+"m";
-        else if(dryingTime >= 20) dryingTimeS = Math.round((float) dryingTime /20)+"s";
-        else dryingTimeS = dryingTime+"t";
 
         widgets.addText(Component.literal(dryingTimeS), 26,18,0,false);
 

@@ -6,8 +6,10 @@ import dev.emi.emi.api.render.EmiTexture;
 import dev.emi.emi.api.stack.EmiStack;
 import dk.sebsa.yaam.YAAMRegistry;
 import dk.sebsa.yaam.YetAnotherAdditionsMod;
+import dk.sebsa.yaam.recipe.DryingRecipe;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.crafting.RecipeManager;
 
 public class YAAMEMI {
     public static final ResourceLocation YAAM_ICON = new ResourceLocation(YetAnotherAdditionsMod.MOD_ID, "yaam.png");
@@ -19,6 +21,10 @@ public class YAAMEMI {
     public static void register(EmiRegistry registry) {
         registry.addCategory(DRYING_CATEGORY);
         registry.addWorkstation(DRYING_CATEGORY, DRYING_WORKSTATION);
-        registry.addRecipe(new DryingEMIRecipe(Items.ROTTEN_FLESH, Items.LEATHER));
+
+        RecipeManager manager = registry.getRecipeManager();
+        for(DryingRecipe recipe : manager.getAllRecipesFor(DryingRecipe.Type.INSTANCE)) {
+            registry.addRecipe(new DryingEMIRecipe(recipe));
+        }
     }
 }

@@ -1,0 +1,8 @@
+{
+  "type": "yaam:drying_recipe",
+  "input": {
+    "item": "minecraft:rotten_flesh"
+  },
+  "output": "minecraft:leather",
+  "timeMax": 2400
+}
