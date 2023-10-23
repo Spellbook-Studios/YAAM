@@ -9,7 +9,7 @@ public class Jerky extends Item {
         super(new Item.Properties().arch$tab(YAAMRegistry.YAAM_TAB).food(new FoodProperties.Builder()
                         .meat()
                         .nutrition(4)
-                        .saturationMod(4)
+                        .saturationMod(0.75f)
                         .build()));
     }
 }

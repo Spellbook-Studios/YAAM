@@ -9,6 +9,8 @@ Adds an assortment of neat feature full blocks and items
 * Drying Rack
   * Hang items on the drying rack
   * If you let rotten flesh dry for long enough it will turn into leather
+  * If you let raw beef / mutton / porkchop hang for some time, it wil turn into edible jerky
+* Integrated [EMI](https://modrinth.com/mod/emi) support
 
 ### Screenshots
 W.I.P
