@@ -1,5 +1,7 @@
 {
   "category.yaam_tab": "Yet Another Additions Mod",
   "block.yaam.drying_rack": "Drying Rack",
-  "emi.category.yaam.drying_workstation": "Drying"
+  "item.yaam.jerky": "Jerky",
+  "emi.category.yaam.drying_workstation": "Drying",
+  "tag.yaam.raw_meet": "Raw Meet"
 }

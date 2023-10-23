@@ -5,6 +5,7 @@ import dev.architectury.registry.registries.RegistrySupplier;
 import dk.sebsa.beholder.Beholder;
 import dk.sebsa.yaam.blocks.DryingRack;
 import dk.sebsa.yaam.blocks.entities.DryingRackEntity;
+import dk.sebsa.yaam.items.Jerky;
 import dk.sebsa.yaam.recipe.DryingRecipe;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -25,6 +26,8 @@ public class YAAMRegistry {
     public static final RegistrySupplier<BlockEntityType<DryingRackEntity>> DRYING_RACK_ENTITY = BEHOLDER.registerBlockEntity("drying_rack_entity", DryingRackEntity::new, DRYING_RACK);
     public static final RegistrySupplier<? extends RecipeType<?>> DRYING_RECIPE_TYPE = BEHOLDER.registerRecipeType(DryingRecipe.DryingRecipeSerializer.ID, DryingRecipe.DryingRecipeSerializer.INSTANCE,
             DryingRecipe.Type.ID, DryingRecipe.Type.INSTANCE);
+
+    public static final RegistrySupplier<Item> JERKY = BEHOLDER.registerItem("jerky", Jerky::new);
 
     public static void register() {
         BEHOLDER.register();

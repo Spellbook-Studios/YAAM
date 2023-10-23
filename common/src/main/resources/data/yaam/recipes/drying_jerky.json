@@ -1,0 +1,9 @@
+{
+  "type": "yaam:drying_recipe",
+  "input": {
+    "tag": "yaam:raw_meet"
+  },
+  "output": "yaam:jerky",
+  "timeMax": 6000,
+  "_timeMax": 5
+}
