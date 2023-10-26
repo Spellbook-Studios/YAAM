@@ -11,6 +11,7 @@ import dk.sebsa.yaam.items.Jerky;
 import dk.sebsa.yaam.recipe.DryingRecipe;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.block.Block;
@@ -28,12 +29,11 @@ public class YAAMRegistry {
 
     public static final RegistrySupplier<Item> JERKY = BEHOLDER.registerItem("jerky", Jerky::new);
     public static final RegistrySupplier<Item> DRIED_APPLE_SLICES = BEHOLDER.registerItem("dried_apple_slices", DriedAppleSlices::new);
-    public static final RegistrySupplier<Block> FIREWOOD_BLOCK = BEHOLDER.registerblock("firewood", () -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)));
-    public static final RegistrySupplier<Item> FIREWOOD = BEHOLDER.registerItem("firewood", () -> new BlockItem(FIREWOOD_BLOCK.get(), new Item.Properties().arch$tab(YAAM_TAB)));
+    public static final RegistrySupplier<Block> FIREWOOD_BLOCK = BEHOLDER.registerBlockWithItem("firewood", () -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)), YAAM_TAB);
 
     public static void register() {
         BEHOLDER.register();
-
-        FuelRegistry.register(1600, FIREWOOD.get());
+        ;
+        FuelRegistry.register(1600, BEHOLDER.ITEMS_REGISTRY.getRegistrar().get(new ResourceLocation(YetAnotherAdditionsMod.MOD_ID, "firewood")));
     }
 }
