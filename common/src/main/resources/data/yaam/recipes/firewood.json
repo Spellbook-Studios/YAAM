@@ -1,0 +1,8 @@
+{
+  "type": "yaam:drying_recipe",
+  "input": {
+    "tag": "minecraft:logs_that_burn"
+  },
+  "output": "yaam:firewood",
+  "timeMax": 24000
+}

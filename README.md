@@ -8,9 +8,7 @@ Adds an assortment of neat feature full blocks and items
 ### Features
 * Drying Rack
   * Hang items on the drying rack
-  * If you let rotten flesh dry for long enough it will turn into leather
-  * If you let raw beef / mutton / porkchop hang for some time, it wil turn into edible jerky
+  * Rotten Flesh can dry to Leather and Raw Meat can dry and turn into edible Jerky
+  * Drying logs makes firewood, which is way better at smelting then a normal log
+* Added some nice shortcut recipes (Currently: Logs to chest & logs to sticks)
 * Integrated [EMI](https://modrinth.com/mod/emi) support
-
-### Screenshots
-W.I.P

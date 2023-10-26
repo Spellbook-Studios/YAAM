@@ -1,18 +1,17 @@
 package dk.sebsa.yaam;
 
+import dev.architectury.registry.fuel.FuelRegistry;
 import dev.architectury.registry.registries.DeferredSupplier;
 import dev.architectury.registry.registries.RegistrySupplier;
 import dk.sebsa.beholder.Beholder;
 import dk.sebsa.yaam.blocks.DryingRack;
 import dk.sebsa.yaam.blocks.entities.DryingRackEntity;
+import dk.sebsa.yaam.items.DriedAppleSlices;
 import dk.sebsa.yaam.items.Jerky;
 import dk.sebsa.yaam.recipe.DryingRecipe;
-import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.*;
-import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -28,8 +27,13 @@ public class YAAMRegistry {
             DryingRecipe.Type.ID, DryingRecipe.Type.INSTANCE);
 
     public static final RegistrySupplier<Item> JERKY = BEHOLDER.registerItem("jerky", Jerky::new);
+    public static final RegistrySupplier<Item> DRIED_APPLE_SLICES = BEHOLDER.registerItem("dried_apple_slices", DriedAppleSlices::new);
+    public static final RegistrySupplier<Block> FIREWOOD_BLOCK = BEHOLDER.registerblock("firewood", () -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)));
+    public static final RegistrySupplier<Item> FIREWOOD = BEHOLDER.registerItem("firewood", () -> new BlockItem(FIREWOOD_BLOCK.get(), new Item.Properties().arch$tab(YAAM_TAB)));
 
     public static void register() {
         BEHOLDER.register();
+
+        FuelRegistry.register(1600, FIREWOOD.get());
     }
 }

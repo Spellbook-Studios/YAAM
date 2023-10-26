@@ -2,6 +2,8 @@
   "category.yaam_tab": "Yet Another Additions Mod",
   "block.yaam.drying_rack": "Drying Rack",
   "item.yaam.jerky": "Jerky",
+  "item.yaam.dried_apple_slices": "Dried Apple Slices",
+  "block.yaam.firewood": "Firewood",
   "emi.category.yaam.drying_workstation": "Drying",
   "tag.yaam.raw_meet": "Raw Meet"
 }
