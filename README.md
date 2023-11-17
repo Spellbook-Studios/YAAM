@@ -12,3 +12,7 @@ Adds an assortment of neat feature full blocks and items
   * Drying logs makes firewood, which is way better at smelting then a normal log
 * Added some nice shortcut recipes (Currently: Logs to chest & logs to sticks)
 * Integrated [EMI](https://modrinth.com/mod/emi) support
+
+### Using this
+You are allowed to use this in any personal modpack,
+but this mod may only be distributed in modpacks published on Modrinth and Curseforge
